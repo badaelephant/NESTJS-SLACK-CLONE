@@ -1,0 +1,43 @@
+*** nestjs의 장점. 
+express에 비해 middleware를 잘 기능별로 나누어놔서 사용하기에 편리하다. 
+
+*** tsconfig
+"esModuleInterop": true
+
+*** express 쓰는 이유
+express middleware 재사용. 
+nest가 express의 설계결함을 좀 잡아줌. 
+
+*** hot reload
+
+hot reload vs --watch 
+
+watch는 전체 프로젝트의 재시작. 
+hot reload는 변경한 번들만 다시.
+
+*** controller와 service를 분리하는 이유
+
+[기능의 분리]
+controller는 req, res를 처리
+service는 비즈니스로직만, req, res 모른다. 
+
+[재사용]
+공통 service 코드를 재사용하기위해. 
+
+[테스트 할때도 편리]
+express test 할때는 req, res, next 모두 mocking 해줘야함. 
+nest는 그런거 없이 service 비동기 함수만 처리해주면 됨. 
+
+
+*** Better Comments
+
+* 문자 : 초록색으로 표시 - 일반 정보
+! 문자 : 빨간색으로 표시 - 중요한 주의사항
+? 문자 : 파란색으로 표시 - 궁금한 사항
+TODO 문자 : 주황색으로 표시 - 추가적으로 해야 할 일
+
+*** Config
+
+Config 정보를 함수를 통해 load:[함수명]으로 빼는 장점은 무엇인가?
+그 함수를 비동기로 async하게 정의할 수 있어서, axios와 같은 것을 통해 DB 값을 가져와 
+config 정보를 세팅 할 수도 있다. 
